@@ -8,33 +8,83 @@
     //Parses as an array of strings, if each string is not contained in the query, the algorithm will test to see if the operative words exist, if so, the computer will assume you meant to say the pre-programmed query
     class Talkshow {
         constructor() {
-            this.roboQandA = [ //Testing Datastructure
+            this.roboQandA = [ //Testing Datastructure & notation
                 {
-                    answer: `I'm Fine; I'm Robert and I'm fine.`,
-                    questions: [
+                    response: `I'm Fine; I'm Robert and I'm fine.`,
+                    phrases: [
                         'are ?you ?okay',
                         'how are you!',
                         'are ?you ?feeling well',
                     ]
                 },
                 {
-                    answer: `No thank you.`,
-                    questions: [
-                        'would you like any assistance today',
-                        'do you want to go to tahiti?',
-                        'would you like to have your eyes eaten by ravens?',
+                    response: `No thank you.`,
+                    phrases: [
+                        'can ?I ?help ?you',
+                        'do ?you ?want to ?go to ?tahiti',
+                        'would ?you ?like to have ?your ?eyes ?eaten by ?ravens!',
                     ]
                 },
                 {
-                    answer: `Don't Tell me what to do`,
-                    questions: ['have a great day']
+                    response: `Don't Tell me what to do`,
+                    phrases: ['have a great day']
                 },
                 {
-                    answer: 'That really got out of hand fast',
-                    questions: ['well ?that ?escalated ?quickly!']
+                    response: 'That really got out of hand fast',
+                    phrases: ['well ?that ?escalated ?quickly!']
 
-                }
+                },
+                {
+                    response: 'Cowabunga Dude',
+                    phrases: ['what is ?your ?catch ?phrase']
+                },
             ]
         }
+
+        getPhraseType(phrase) {
+            let type = undefined
+            if (phrase.includes('?') && phrase.endsWith('!')) {
+                type = 'operative-strict'
+            } else if (phrase.includes('?')) { type = 'operative'
+            } else if (phrase.endsWith('!')) { type = 'strict' 
+            } else { type = 'unordered'
+            }
+            return type
+        }
+
+        parseOperative(operativePhrase) {
+            let probable = operativePhrase.split(' ').map(a=>a.replace('?', ''))
+            let possible = operativePhrase.split(' ').filter(a=>a.startsWith('?'))
+            return {prob:probable, poss:possible}
+        }
+
+        
     }
+
+
+
+
+    testing = new Talkshow()
+
+    for (let set of testing.roboQandA){
+        for (let q of set.phrases){
+            console.log(q, testing.getPhraseType(q))
+            if (testing.getPhraseType(q) == 'operative'){console.log(testing.parseOperative(q))}
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
