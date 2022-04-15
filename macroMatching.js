@@ -58,6 +58,20 @@
             return {prob:probable, poss:possible}
         }
 
+        //TODO: Parse Operative Strict
+        
+        //TODO: Parse strict (aka remove the exclamation point)
+        
+        //TODO: Parse undordered
+        
+        //TODO: Matching against test phrases
+        
+        //TODO: 
+        
+        //TODO: 
+
+        //TODO: 
+
         
     }
 
