@@ -68,7 +68,7 @@
         
         //TODO: Kick your butt. 
         
-        //TODO: i am the captian now
+        //TODO: you smell
 
         //TODO: thats okay, take your time
 
