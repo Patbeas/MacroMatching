@@ -70,7 +70,7 @@
         
         //TODO: i am not a krusty krab
 
-        //TODO: 
+        //TODO: thats okay, take your time
 
         
     }
