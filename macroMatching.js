@@ -68,7 +68,7 @@
         
         //TODO: Kick your butt. 
         
-        //TODO: i am not a krusty krab
+        //TODO: i am the captian now
 
         //TODO: thats okay, take your time
 
